@@ -73,24 +73,15 @@ function setStatus(state: BatchDownloadState, message: string) {
   }
 }
 
-function triggerZipDownload(urlOrBlob: string | Blob) {
-  if (typeof urlOrBlob === "string") {
-    // 移动端对 download 属性和脚本点击的兼容性较差，直接跳转更稳定。
-    window.location.assign(urlOrBlob);
-    return;
-  }
-
-  const url = URL.createObjectURL(urlOrBlob);
+function triggerZipDownload(zipBlob: Blob) {
+  const url = URL.createObjectURL(zipBlob);
   const anchor = document.createElement("a");
   anchor.href = url;
   anchor.download = "cet6-papers.zip";
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();
-
-  if (typeof urlOrBlob !== "string") {
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 async function fetchPaperBlob(paper: BatchDownloadPaper) {
@@ -125,12 +116,8 @@ async function startBatchDownload(state: BatchDownloadState) {
     const isDefaultFullSelection = selectedPapers.length === state.checkboxes.length && state.defaultArchivePath;
 
     if (isDefaultFullSelection) {
-      setStatus(state, "正在进入整包下载...");
-
-      window.setTimeout(() => {
-        triggerZipDownload(state.defaultArchivePath as string);
-      }, 80);
-
+      dialog.close();
+      window.location.assign(state.defaultArchivePath);
       return;
     }
 
