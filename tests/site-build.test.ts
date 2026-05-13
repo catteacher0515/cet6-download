@@ -12,9 +12,9 @@ test("首页和关于页会出现在构建产物中", () => {
   const homeHtml = readFileSync(resolve(process.cwd(), "dist/index.html"), "utf8");
   const aboutHtml = readFileSync(resolve(process.cwd(), "dist/about/index.html"), "utf8");
 
-  assert.match(homeHtml, /四级真题资料站/);
-  assert.match(homeHtml, /href="\/cet4-download\/papers"/);
-  assert.match(homeHtml, /四级真题/);
+  assert.match(homeHtml, /六级真题资料站/);
+  assert.match(homeHtml, /href="\/cet6-download\/papers"/);
+  assert.match(homeHtml, /六级真题/);
   assert.match(homeHtml, /直接下载/);
   assert.match(homeHtml, /进入真题下载页/);
   assert.match(aboutHtml, /关于本站/);
@@ -34,29 +34,29 @@ test("真题下载页输出年份分组和 PDF 下载链接", () => {
   assert.match(papersHtml, /papers-grid papers-grid--three-up/);
   assert.match(papersHtml, /papers-section__head papers-section__head--center/);
   assert.match(papersHtml, /2025年 - 下半年/);
-  assert.match(papersHtml, /2025年12月英语四级真题\(第1套\)/);
-  assert.match(papersHtml, /2025年12月英语四级真题\(第2套\)/);
-  assert.match(papersHtml, /2025年12月英语四级真题\(第3套\)/);
+  assert.match(papersHtml, /2025年12月英语六级真题\(第1套\)/);
+  assert.match(papersHtml, /2025年12月英语六级真题\(第2套\)/);
+  assert.match(papersHtml, /2025年12月英语六级真题\(第3套\)/);
   assert.match(papersHtml, /下载 PDF/);
   assert.match(papersHtml, /批量下载/);
   assert.match(papersHtml, /批量下载真题/);
   assert.match(papersHtml, /开始下载/);
   assert.match(papersHtml, /全选全部真题/);
-  assert.match(papersHtml, /\/cet4-download\/downloads\/cet4-papers\.zip/);
-  assert.match(papersHtml, /\/cet4-download\/papers\/2025\/12\/cet4-2025-12-set-01\.pdf/);
-  assert.match(papersHtml, /\/cet4-download\/papers\/2025\/12\/1\//);
+  assert.match(papersHtml, /\/cet6-download\/downloads\/cet6-papers\.zip/);
+  assert.match(papersHtml, /\/cet6-download\/papers\/2025\/12\/cet6-2025-12-set-01\.pdf/);
+  assert.match(papersHtml, /\/cet6-download\/papers\/2025\/12\/1\//);
   assert.doesNotMatch(papersHtml, /Coming Soon/);
 });
 
 test("试卷预览页输出在线预览和下载入口", () => {
   const previewHtml = readFileSync(resolve(process.cwd(), "dist/papers/2025/12/1/index.html"), "utf8");
 
-  assert.match(previewHtml, /2025年12月英语四级真题\(第1套\)/);
+  assert.match(previewHtml, /2025年12月英语六级真题\(第1套\)/);
   assert.match(previewHtml, /reader-pdfjs/);
   assert.match(previewHtml, /reader-mobile-preview/);
   assert.match(previewHtml, /reader-mobile-preview__page/);
-  assert.match(previewHtml, /href="\/cet4-download\/papers"/);
-  assert.match(previewHtml, /data-pdf-url="\/cet4-download\/papers\/2025\/12\/cet4-2025-12-set-01\.pdf"/);
+  assert.match(previewHtml, /href="\/cet6-download\/papers"/);
+  assert.match(previewHtml, /data-pdf-url="\/cet6-download\/papers\/2025\/12\/cet6-2025-12-set-01\.pdf"/);
   assert.match(previewHtml, /data-mobile-preview-root/);
   assert.match(previewHtml, /page-01\.jpg/);
   assert.doesNotMatch(previewHtml, /reader-topbar/);
@@ -67,7 +67,7 @@ test("试卷预览页输出在线预览和下载入口", () => {
   assert.doesNotMatch(previewHtml, /iframe/);
   assert.match(previewHtml, /听力音频/);
   assert.match(previewHtml, /audio/);
-  assert.match(previewHtml, /\/cet4-download\/audio\/2025\/12\/cet4-2025-12-set-01\.mp3/);
+  assert.match(previewHtml, /\/cet6-download\/audio\/2025\/12\/cet6-2025-12-set-01\.mp3/);
 });
 
 test("首页会强调真题下载与后续高频词汇扩展方向", () => {

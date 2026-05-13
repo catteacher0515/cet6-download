@@ -7,7 +7,7 @@ import {
   buildSessionAssetPlan,
   insertPaperRecords,
   parsePrepareSessionArgs
-} from "../src/data/cet4";
+} from "../src/data/cet6";
 import { preparePaperAsset, printPreparedPaper } from "./prepare-paper-lib";
 
 async function main() {
@@ -18,7 +18,7 @@ async function main() {
 
   const { year, month, sourcePdfs, verifyAfterImport } = parsePrepareSessionArgs(process.argv.slice(2));
   const plan = buildSessionAssetPlan(year, month);
-  const dataFilePath = resolve(process.cwd(), "src/data/cet4.ts");
+  const dataFilePath = resolve(process.cwd(), "src/data/cet6.ts");
   const snippets = [1, 2, 3].map((setNumber) => buildPaperRecordSnippet(year, month, setNumber));
 
   console.log(`开始准备 ${year} 年 ${month} 月的 3 套真题资源`);
@@ -34,7 +34,7 @@ async function main() {
   await writeFile(dataFilePath, nextSource, "utf8");
 
   console.log("本次半年资源准备完成。");
-  console.log("已自动写入 src/data/cet4.ts");
+  console.log("已自动写入 src/data/cet6.ts");
 
   if (verifyAfterImport) {
     console.log("开始执行导入后自动校验...");

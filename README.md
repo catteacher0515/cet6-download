@@ -1,12 +1,12 @@
-# CET4 Download
+# CET6 Download
 
-一个面向英语四级用户的纯工具站。
+一个面向英语六级用户的纯工具站。
 
-核心目标很直接：不登录、不跳转、不做无关拦截，直接提供四级真题 PDF、在线预览和已接入的听力资源。
+核心目标很直接：不登录、不跳转、不做无关拦截，直接提供六级真题 PDF、在线预览和已接入的听力资源。
 
 线上地址：
 
-- `https://catteacher0515.github.io/cet4-download/`
+- `https://catteacher0515.github.io/cet6-download/`
 
 ## 项目特点
 
@@ -21,7 +21,7 @@
 
 ## 当前内容范围
 
-- 当前已收录 `2021 - 2025` 的四级真题，共 `30` 套
+- 当前已收录 `2021 - 2025` 的六级真题，共 `30` 套
 - 当前提供：
   - 在线预览
   - PDF 下载
@@ -64,14 +64,14 @@ npm run validate:content
 - `npm run test`：运行数据与页面相关测试
 - `npm run build`：构建静态站点
 - `npm run check`：执行 Astro 检查和测试
-- `npm run validate:content`：检查 `src/data/cet4.ts` 里声明的 PDF、预览图、音频文件是否真实存在
+- `npm run validate:content`：检查 `src/data/cet6.ts` 里声明的 PDF、预览图、音频文件是否真实存在
 
 ## 项目结构
 
 ```text
 src/
   data/
-    cet4.ts                  真题数据源与辅助方法
+    cet6.ts                  真题数据源与辅助方法
   layouts/
     BaseLayout.astro         全站布局
   pages/
@@ -105,7 +105,7 @@ public/
 
 真题数据统一维护在：
 
-- `src/data/cet4.ts`
+- `src/data/cet6.ts`
 
 每条数据至少包含：
 
@@ -150,7 +150,7 @@ npm run prepare:paper -- 2026 6 1 "/absolute/path/to/file.pdf"
 
 - `month` 只能是 `6` 或 `12`
 - `setNumber` 只能是 `1`、`2`、`3`
-- 该命令只准备资源，不会自动写入 `src/data/cet4.ts`
+- 该命令只准备资源，不会自动写入 `src/data/cet6.ts`
 
 ## 新增某年某月的一整场真题
 
@@ -188,7 +188,7 @@ npm run build
 
 命名规则与真题主数据保持一致，例如：
 
-- `public/audio/2025/12/cet4-2025-12-set-01.mp3`
+- `public/audio/2025/12/cet6-2025-12-set-01.mp3`
 
 如果某套真题没有听力，不需要强行补字段；页面会自动按“无听力”处理。
 
@@ -201,7 +201,7 @@ npm run build
 
 默认全选时，直接下载预先生成好的静态 zip：
 
-- `public/downloads/cet4-papers.zip`
+- `public/downloads/cet6-papers.zip`
 
 这条路径的优势是：
 
@@ -258,7 +258,7 @@ node scripts/generate-mobile-preview-pages.ts
 当前配置：
 
 - `site`: `https://catteacher0515.github.io`
-- `base`: `/cet4-download`
+- `base`: `/cet6-download`
 
 ## 维护建议
 

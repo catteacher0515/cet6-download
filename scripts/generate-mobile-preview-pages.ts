@@ -2,7 +2,7 @@ import { mkdir, readdir, rename, rm, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
-import { buildPaperPreviewPagePath, papers } from "../src/data/cet4.ts";
+import { buildPaperPreviewPagePath, papers } from "../src/data/cet6.ts";
 
 const execFileAsync = promisify(execFile);
 const PDFTOPPM_PATH = "/opt/homebrew/bin/pdftoppm";

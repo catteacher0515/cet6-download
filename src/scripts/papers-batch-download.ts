@@ -77,7 +77,7 @@ function triggerZipDownload(urlOrBlob: string | Blob) {
   const url = typeof urlOrBlob === "string" ? urlOrBlob : URL.createObjectURL(urlOrBlob);
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = "cet4-papers.zip";
+  anchor.download = "cet6-papers.zip";
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();

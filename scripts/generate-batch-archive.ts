@@ -1,7 +1,7 @@
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import JSZip from "jszip";
-import { buildBatchDownloadFilename, buildDefaultBatchArchivePath, papers } from "../src/data/cet4.ts";
+import { buildBatchDownloadFilename, buildDefaultBatchArchivePath, papers } from "../src/data/cet6.ts";
 
 async function main() {
   const publicDir = resolve(process.cwd(), "public");

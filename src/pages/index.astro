@@ -1,5 +1,5 @@
 ---
-import { papers } from "../data/cet4";
+import { papers } from "../data/cet6";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { withBase } from "../utils/paths";
 
@@ -8,21 +8,21 @@ const currentBase = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
-  title="四级真题工具站"
-  description="提供四级真题 PDF 直接下载，后续支持听力在线播放。"
+  title="六级真题工具站"
+  description="提供六级真题 PDF 直接下载，后续支持听力在线播放。"
   pathname="/"
   hideFooter={true}
 >
   <section class="page-section home-hero">
     <div class="home-hero__grid">
       <div class="home-hero__content">
-        <p class="home-hero__eyebrow">免费四级真题工具站</p>
+        <p class="home-hero__eyebrow">免费六级真题工具站</p>
         <h1 class="home-hero__title">
-          <span>四级真题</span>
+          <span>六级真题</span>
         </h1>
         <p class="home-hero__subtitle">直接下载</p>
         <p class="home-hero__lead">不登录，不跳转，不做无关拦截。</p>
-        <p class="home-hero__detail">你进来之后要做的事只有一件：更快拿到需要的四级真题 PDF。</p>
+        <p class="home-hero__detail">你进来之后要做的事只有一件：更快拿到需要的六级真题 PDF。</p>
         <div class="home-hero__actions">
           <a class="home-hero__button" href={withBase("/papers", currentBase)}>进入真题下载页</a>
         </div>

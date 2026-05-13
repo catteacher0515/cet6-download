@@ -1,6 +1,6 @@
 ---
 import PaperCard from "../components/PaperCard.astro";
-import { buildBatchDownloadFilename, buildDefaultBatchArchivePath, groupPapersBySession, papers } from "../data/cet4";
+import { buildBatchDownloadFilename, buildDefaultBatchArchivePath, groupPapersBySession, papers } from "../data/cet6";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { withBase } from "../utils/paths";
 
@@ -20,14 +20,14 @@ const defaultBatchArchivePath = withBase(buildDefaultBatchArchivePath(), current
 
 <BaseLayout
   title="真题下载"
-  description="按年份查看四级真题，直接下载 PDF。"
+  description="按年份查看六级真题，直接下载 PDF。"
   pathname="/papers"
   shellClassName="site-shell--full-bleed"
 >
   <section class="papers-hero papers-hero--compact page-section">
     <div class="papers-hero__header">
       <span class="papers-hero__year-tag">2026</span>
-      <h1 class="papers-hero__title">大学英语四级真题在线</h1>
+      <h1 class="papers-hero__title">大学英语六级真题在线</h1>
       <p class="papers-hero__subline">2025 年 12 月起，逐步整理历年真题试卷</p>
     </div>
 

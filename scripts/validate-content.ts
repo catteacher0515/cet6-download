@@ -1,6 +1,6 @@
 import { access } from "node:fs/promises";
 import { resolve } from "node:path";
-import { papers } from "../src/data/cet4";
+import { papers } from "../src/data/cet6";
 
 const publicDir = resolve(process.cwd(), "public");
 
